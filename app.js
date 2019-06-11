@@ -7,8 +7,10 @@ const app = express()
 //const public_dir_path = path.join(__dirname,'../public')
 //app.use(express.static(public_dir_path))
 
-app.listen(3000, () =>{
-    console.log('Server running at port 3000!')
+const port  = process.env.PORT || 3000
+
+app.listen(port, () =>{
+    console.log('Server running at port! ' + port)
 })
 
 app.get('/weather', (req,res) =>{
