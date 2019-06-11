@@ -23,11 +23,13 @@ app.get('/weather', (req,res) =>{
         if(error){
             res.send(error)
         }
+        
          
         weather(data.latitude,data.longitude , (error,forecastdata) => {
             if(error){
                 res.send(error)
             }
+            
             res.send('Current Temperature in ' + data.location+ ' is '+ forecastdata.body.currently.temperature+ '')
                         
         })

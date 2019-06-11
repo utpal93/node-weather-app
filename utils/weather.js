@@ -8,8 +8,8 @@ const weather = (lat,long,callback) => {
     request({ url: url, json: true }, (error, response) => {
         if(error)
           callback('Unable to connect to internet services!',undefined)
-        // else if(response.body.code = 400)
-        //   callback('Unable to find weather info. Try again later.', undefined)
+        else if(response.statusCode == 400)
+           callback('Unable to find weather info. Try again later.', undefined)
         else
          callback(undefined,response)
     })
