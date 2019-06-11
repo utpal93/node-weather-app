@@ -13,6 +13,10 @@ app.listen(port, () =>{
     console.log('Server running at port! ' + port)
 })
 
+app.get('/', (req,res) =>{
+     res.send('Welcome to Botor App')
+})
+
 app.get('/weather', (req,res) =>{
 
     geocode(req.query.address, (error,data) => {
