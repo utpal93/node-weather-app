@@ -10,9 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^2.6.2",
     "express": "^4.16.4",
     "geocoder": "^0.2.3",
     "hbs": "^4.0.1",
+    "moment": "^2.24.0",
     "validator": "^10.8.0"
   }
 }

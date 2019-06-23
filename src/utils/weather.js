@@ -11,6 +11,7 @@ const weather = (lat,long,callback) => {
         else if(response.statusCode == 400)
            callback('Unable to find weather info. Try again later.', undefined)
         else
+         
          callback(undefined,response)
     })
 

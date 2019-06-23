@@ -2,8 +2,9 @@ console.log('Client JS is loaded!')
 
 const searchForm = document.querySelector('form')
 const search = document.querySelector('input')
-const msg = document.querySelector('#result')
-
+const place = document.querySelector('#place')
+const temp = document.querySelector('#temp')
+const rain = document.querySelector('#rain')
 
 
 
@@ -11,7 +12,7 @@ searchForm.addEventListener('submit', (e) => {
     e.preventDefault()
     
     const location = search.value
-    msg.textContent = ''
+    //msg.textContent = ''
 
     fetch('http://localhost:3000/weather?address=' +location).then((response) => {
             response.json().then((data) => {
@@ -23,7 +24,9 @@ searchForm.addEventListener('submit', (e) => {
                    data.forecastdata.body.currently.temperature + ' degrees in.' +data.location+' There is a ' +
                    data.forecastdata.body.currently.precipProbability + '% chance of rain.'
                     
-                    msg.textContent = res_msg
+                   place.textContent = data.location
+                   temp.textContent = round(data.forecastdata.body.currently.temperature)
+                   rain.textContent = data.forecastdata.body.currently.precipProbability
                     
                 }
             })

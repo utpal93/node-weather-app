@@ -10,7 +10,8 @@ const public_dir_path = path.join(__dirname,'../public')
 app.use(express.static(public_dir_path))
 const viewsPath = path.join(__dirname, '../views')
 app.set('views', viewsPath)
-app.set('view engine', 'hbs')
+app.set('view engine', 'ejs')
+app.locals.moment = require('moment');
 
 const port  = process.env.PORT || 3000
 
@@ -19,11 +20,13 @@ app.listen(port, () =>{
 })
 
 app.get('', (req,res) =>{
-     res.render('home')
+     res.render('home', {location:'',forecastdata:[]})
 })
 
 
 app.get('/weather', (req,res) =>{
+
+    
 
     geocode(req.query.address, (error,data) => {
         if(error){
@@ -32,15 +35,8 @@ app.get('/weather', (req,res) =>{
         
          
         weather(data.latitude,data.longitude , (error,forecastdata) => {
-            if(error){
-                res.send(error)
-            }
             
-            
-            res.send({
-                location : data.location,
-                forecastdata : forecastdata
-            })
+            res.render('result',{ location : data.location,forecastdata : forecastdata.body})
                         
         })
     })
