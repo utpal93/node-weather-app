@@ -1,0 +1,83 @@
+<html>
+
+<head>
+    <title>Botor App</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+    <link href="/css/style.css" rel="stylesheet" >
+    
+</head>
+
+<body>
+
+  <div class="site-content">
+			<div class="site-header">
+				<div class="container">
+					<a href="/" class="branding">
+						<img src="images/logo.png" alt="" class="logo">
+						<div class="logo-type">
+							<h1 class="site-title">Botor App</h1>
+							<small class="site-description">Look before you go out</small>
+						</div>
+					</a>
+
+					<!-- Default snippet for navigation -->
+					<div class="main-navigation">
+						<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+						<ul class="menu">
+							<li class="menu-item current-menu-item"><a href="index.html">Git Link</a></li>
+							
+						</ul> 
+					</div> <!-- .main-navigation -->
+
+					<div class="mobile-navigation"></div>
+
+				</div>
+			</div> <!-- .site-header -->
+
+            <div class="hero" data-bg-image="images/banner.png">
+                <div class="container">
+					<form  class="find-location" action="/weather">
+						<input type="text" name="address" placeholder="Find your location...">
+						<input type="submit" value="Find">
+					</form>
+
+				</div>
+				<div class="container">
+                    <h3><%= error %></h3>
+				</div>
+			</div>
+			
+
+			<footer class="site-footer">
+				<div class="container">
+					<!-- <div class="row">
+						<div class="col-md-8">
+							<form action="#" class="subscribe-form">
+								<input type="text" placeholder="Enter your email to subscribe...">
+								<input type="submit" value="Subscribe">
+							</form>
+						</div>
+						<div class="col-md-3 col-md-offset-1">
+							<div class="social-links">
+								<a href="#"><i class="fa fa-facebook"></i></a>
+								<a href="#"><i class="fa fa-twitter"></i></a>
+								<a href="#"><i class="fa fa-google-plus"></i></a>
+								<a href="#"><i class="fa fa-pinterest"></i></a>
+							</div>
+						</div>
+					</div> -->
+
+					<p class="colophon">Copyright 2019 Company name. All rights reserved</p>
+				</div>
+			</footer> 
+		</div>
+		
+
+<script src="js/plugins.js"></script>
+
+</body>
+
+
+</html>
