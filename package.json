@@ -15,6 +15,6 @@
     "geocoder": "^0.2.3",
     "hbs": "^4.0.1",
     "moment": "^2.24.0",
-    "validator": "^10.8.0"
+    "validator": "^13.7.0"
   }
 }
